@@ -29,10 +29,10 @@ class Users with ChangeNotifier {
       _items.update(user.id, (_) => user);
     } else {
       final id = Random().nextDouble().toString();
-
       _items.putIfAbsent(
         id,
         () => User(
+          id: id,
           name: user.name,
           email: user.email,
           avatarUrl: user.avatarUrl,
